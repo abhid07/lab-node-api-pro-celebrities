@@ -139,3 +139,20 @@ router.delete('/:id/delete',(req,res)=>{
 })
 
 module.exports = router
+
+
+router.put('/lessons/:id', (req, res) => {
+    var lesson = ({
+        id: req.body.id,
+        name: req.body.name
+    })
+
+    Lesson.updateOne({ id: req.params.id }, lesson, (err, lesson) => {
+        if (err) {
+            res.status(404).json({ error: "Some error occured ! please try after some time" })
+        }
+        else {
+            res.redirect(`/api/lessons`)
+        }
+    })
+})

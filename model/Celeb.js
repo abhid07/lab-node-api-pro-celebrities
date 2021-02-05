@@ -12,4 +12,4 @@ const CelebDetail = new Schema({
 
 const Celeb = mongoose.model('celebraties_data',CelebDetail)
 
-module.exports={Celeb}
+module.exports={ Celeb }
